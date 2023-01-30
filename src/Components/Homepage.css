@@ -1,0 +1,63 @@
+
+
+.homePage{
+ padding: 10px 20px;  
+}
+
+.homePage h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: red;
+}
+
+.homePage header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.homePage button{
+    padding: 5px 10px;
+    border-radius: 20px;
+    border: 2px solid red;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 5px 5px 10px 0px rgba(0,0,0,0.75);
+}
+
+.homePage button:hover{
+    background-color: red;
+    transform: scale(1.1)
+}
+
+
+
+.homePage .searchOptions{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.homePage input{
+    border-radius: 20px;
+    height: 35px;
+    width: 350px;
+    padding: 0 10px;
+    margin-right: 5px;
+}
+.homePage select{
+    height: 25px;
+    padding: 0 10px;
+    border-radius: 20px;
+}
+
+.homePage table th{
+    background-color: red;
+    min-width: 250px;
+    border-radius: 5px;
+    height: 35px;
+}
+
+.homePage table td{
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
