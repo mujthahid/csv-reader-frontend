@@ -1,6 +1,8 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './AddNewCsv.css';
+
 
 const API_URL = process.env.REACT_APP_API_URL;
 
@@ -8,9 +10,23 @@ const CreateCSV = () => {
   const [data, setData] = useState([{}]);
   const [fileName, setFileName] = useState("");
   const [columns, setColumns] = useState([{ id: "", title: "" },{ id: "", title: "" },{ id: "", title: "" }]);
-
+  const navigate = useNavigate()
+  useEffect(()=>{
+   
+    const getPage = async ()=> {
+    await axios.get(`${API_URL}/api/addcsv`)
+    .then(res => {
+      console.log(res)
+      if(res.status) navigate('/addcsv')
+    }).catch(err => console.log(err))
+   }
+   
+   getPage()
+   
+  },[navigate])
+  
+  
   //adding new row
-
   const handleAddRow = () => {
     const newRow = {};
     columns.forEach((col) => {
@@ -83,10 +99,12 @@ const CreateCSV = () => {
 
     //appending link to the body
     document.body.appendChild(link);
-
+    
     //simulating a click event
     link.click();
-    window.location.reload();
+  
+    window.location.reload()
+    
     
 } catch (error) {
      console.log(error)
